@@ -102,8 +102,8 @@ public class Opcoes extends JFrame implements ActionListener {
 		//VOLUME
 		
 		jl_volume = new JLabel(" SOM DO JOGO : ");
-		radon_vol = new JRadioButton("LIGADO");
-        radoff_vol = new JRadioButton("DESLIGADO", true);
+		radon_vol = new JRadioButton("LIGADO", true);
+        radoff_vol = new JRadioButton("DESLIGADO");
 
 		
 		group_vol = new ButtonGroup();
@@ -113,6 +113,9 @@ public class Opcoes extends JFrame implements ActionListener {
 		jp_volume.add(jl_volume);
 		jp_volume.add(radon_vol);
 		jp_volume.add(radoff_vol);
+		
+		radon_vol.addActionListener(this);
+		radoff_vol.addActionListener(this);
 		
 		
 		jl_volume.setHorizontalAlignment(SwingConstants.CENTER);
@@ -160,6 +163,10 @@ public class Opcoes extends JFrame implements ActionListener {
 		System.exit(0);
 	}if (e.getSource()== Botao){
 		jl_nome.setText("NOME DO JOGADOR : " + tf_nome.getText());
+	}if (e.getSource()== radon_vol){
+		jp_volslider.setVisible(true);
+	}if (e.getSource()== radoff_vol){
+		jp_volslider.setVisible(false);
 	}
 	
 	}
