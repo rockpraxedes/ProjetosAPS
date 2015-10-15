@@ -1,0 +1,104 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.io.*;
+
+
+public class Menu extends JFrame{
+
+	// DECLARANDO VARIAVEIS;
+	private static final long serialVersionUID = 1L;
+	private JFrame frame;
+	private JPanel jp_total,jp_center,jp_lateral,jp_lateral2,jp_top;
+	private JLabel jl_nome;
+	private botao[] Botao = new botao[20];
+	
+	
+	
+	
+	
+	
+	//MTD. CONSTRUTOR;
+	public Menu(){
+		
+		super("Tela Menu");
+		JFrame frame = new JFrame("Menu");
+		
+		
+		//Setando configs da janela
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE); 
+		frame.setVisible(true);
+		frame.setLocation(100,100);
+		frame.setSize(500,500);
+		frame.setResizable(true); 
+		
+		//Layouts
+		jp_total = new JPanel(new BorderLayout());
+		jp_center = new JPanel(new FlowLayout());
+		jp_lateral = new JPanel(new GridLayout(4,1));
+		jp_lateral2 = new JPanel(new GridLayout(4,1));
+		jp_top = new JPanel(new FlowLayout());
+		
+		
+		//ADDS
+		frame.add(jp_total);
+		jp_total.add(jp_center,BorderLayout.CENTER);
+		jp_total.add(jp_lateral,BorderLayout.EAST);
+		jp_total.add(jp_lateral2,BorderLayout.WEST);
+		jp_total.add(jp_top,BorderLayout.NORTH);
+		
+		//NORTH
+		jl_nome = new JLabel ("GENIUS DOS DESENVOLVEDORES");
+		jp_top.add(jl_nome);
+		jl_nome.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		
+		
+		
+		//LATERAL
+		
+		for(int x=5;x<9;x++){ 
+			Botao[x]= new botao();
+			jp_lateral.add(Botao[x]);
+			//Botao[x].addActionListener(this);
+		}
+		
+		Botao[5].setBackground(Color.YELLOW); 
+		Botao[6].setBackground(Color.WHITE); 
+		Botao[7].setBackground(Color.BLUE); 
+		Botao[8].setBackground(Color.BLACK); 
+		
+		
+		//LATERAL2
+		
+		for(int x=9;x<13;x++){ 
+			Botao[x]= new botao();
+			jp_lateral2.add(Botao[x]);
+			//Botao[x].addActionListener(this);
+		}
+		
+		Botao[9].setBackground(Color.GREEN); 
+		Botao[10].setBackground(Color.RED); 
+		Botao[11].setBackground(Color.YELLOW); 
+		Botao[12].setBackground(Color.BLUE); 
+		
+		
+		
+		//CENTER
+		
+		for(int x=1;x<5;x++){ 
+			Botao[x]= new botao();
+			Botao[x].setPreferredSize(new Dimension(150, 80));
+			jp_center.add(Botao[x]);
+			//Botao[x].addActionListener(this);
+		}
+		
+		
+		
+	
+	}
+	
+}	
