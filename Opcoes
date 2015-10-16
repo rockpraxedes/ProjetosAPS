@@ -14,7 +14,6 @@ public class Opcoes extends JFrame implements ActionListener {
 
 	// DECLARANDO VARIAVEIS;
 	private static final long serialVersionUID = 1L;
-	private JFrame frame;
 	private JPanel jp_total,jp_save,jp_quadrantes,jp_daltonismo,jp_volume,jp_volslider,jp_nome;
 	private JLabel jl_daltonismo,jl_volume,jl_volslider,jl_nome,jl_opcoes,jl_status;
 	private JTextField tf_nome;
@@ -23,21 +22,21 @@ public class Opcoes extends JFrame implements ActionListener {
 	private ButtonGroup group_dalt,group_vol;
 	private JButton Botao,Bot_save,Bot_cancel;
 
-	
+	JFrame frame = new JFrame("Opcoes");
 	
 	
 	//MTD. CONSTRUTOR;
 	public Opcoes(){
 		
 		super("Tela de Opcoes");
-		JFrame frame = new JFrame("Opcoes");
+		
 		
 		//Setando configs da janela
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE); 
-		frame.setVisible(true);
-		frame.setLocation(300,300);
+		frame.setLocation(100,100);
 		frame.setSize(450,250);
 		frame.setResizable(true); 
+		frame.setVisible(true);
 		
 	
 		//LAYOUTS
@@ -159,7 +158,8 @@ public class Opcoes extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e){
 	
 	if (e.getSource()== Bot_cancel){
-		System.exit(0);
+		frame.dispose();
+		Menu menu = new Menu ();
 	}if (e.getSource()== Botao){
 		jl_nome.setText("NOME DO JOGADOR : " + tf_nome.getText());
 	}if (e.getSource()== radon_vol){
