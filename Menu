@@ -13,13 +13,12 @@ public class Menu extends JFrame implements ActionListener {
 
 	// DECLARANDO VARIAVEIS;
 	private static final long serialVersionUID = 1L;
-	private JFrame frame;
 	private JPanel jp_total,jp_center,jp_lateral,jp_lateral2,jp_top;
 	private JLabel jl_nome,jl_rodape;
 	private botao[] Botao = new botao[20];
 	
 	
-	
+	public JFrame frame = new JFrame("Menu");
 	
 	
 	
@@ -27,15 +26,14 @@ public class Menu extends JFrame implements ActionListener {
 	public Menu(){
 		
 		super("Tela Menu");
-		JFrame frame = new JFrame("Menu");
 		
 		
 		//Setando configs da janela
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-		frame.setVisible(true);
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE); 
 		frame.setLocation(100,100);
 		frame.setSize(540,340);
 		frame.setResizable(false); 
+		frame.setVisible(true);
 		
 		//Layouts
 		jp_total = new JPanel(new BorderLayout());
@@ -126,8 +124,8 @@ public class Menu extends JFrame implements ActionListener {
 		if (e.getSource()== Botao[6]){
 			System.exit(0);
 		}if (e.getSource()== Botao[4]){
-			Opcoes opcao = new Opcoes();
-			frame.setVisible();
+			new Opcoes();
+			frame.dispose();
 			
 		}
 	}
