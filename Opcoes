@@ -32,7 +32,7 @@ public class Opcoes extends JFrame implements ActionListener {
 		super("Tela de Opcoes");
 		JFrame frame = new JFrame("Opcoes");
 		
-		//Setando configs da janela // pack();
+		//Setando configs da janela
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE); 
 		frame.setVisible(true);
 		frame.setLocation(300,300);
@@ -40,6 +40,7 @@ public class Opcoes extends JFrame implements ActionListener {
 		frame.setResizable(true); 
 		
 	
+		//LAYOUTS
 		
 		jp_total = new JPanel (new BorderLayout());
 		jp_quadrantes = new JPanel(new GridLayout(2,2,3,3));
@@ -53,7 +54,7 @@ public class Opcoes extends JFrame implements ActionListener {
 		
 		
 		
-		//PANEL
+		//PANEL NORTH AND SOUTH
 		
 		jl_opcoes = new JLabel("OPCOES DO JOGO");
 		jl_opcoes.setHorizontalAlignment(SwingConstants.CENTER);
@@ -109,7 +110,6 @@ public class Opcoes extends JFrame implements ActionListener {
 		group_vol = new ButtonGroup();
 		group_vol.add(radon_vol);
 		group_vol.add(radoff_vol);
-	
 		jp_volume.add(jl_volume);
 		jp_volume.add(radon_vol);
 		jp_volume.add(radoff_vol);
@@ -154,7 +154,6 @@ public class Opcoes extends JFrame implements ActionListener {
 		jp_save.add(Bot_save);
 		jp_save.add(Bot_cancel);
 		
-			
 	}
 	
 	public void actionPerformed(ActionEvent e){
