@@ -43,7 +43,7 @@ public class Jogo extends JFrame implements ActionListener {
 		jp_east = new JPanel(new FlowLayout());
 		jp_west = new JPanel(new FlowLayout());
 		
-		
+		//BOTOES DO JOGO
 	
 		Color[] Collor = new Color[10];
 		Collor[1] = Color.BLUE;
@@ -56,45 +56,76 @@ public class Jogo extends JFrame implements ActionListener {
 		Collor[8] = Color.WHITE;
 		
 		
+		//JOGO
+			
+		for(int x=1;x<5;x++){ 
+			Botao[x]= new botao();
+			jp_center.add(Botao[x]);
+			Botao[x].addActionListener(this);
+			
+		}	
+		
+		//MENU
+		for(int x=5;x<7;x++){ 
+		
+			Botao[x]= new botao();
+			Botao[x].addActionListener(this);
+			jp_south.add(Botao[x]);
+			Botao[x].setPreferredSize(new Dimension(200, 80));
+			Botao[x].setBorder(new LineBorder(Color.WHITE, 3));
+			Botao[x].setForeground(Color.WHITE);
+			
+		}
+		
+		Botao[5].setText("JOGAR");
+		Botao[6].setText("VOLTAR");
+		
 		if(daltonico==0){
 			
+			jp_north.setBackground(Color.BLACK);
+			jp_south.setBackground(Color.BLACK);
+			jp_east.setBackground(Color.BLACK);
+			jp_west.setBackground(Color.BLACK);
+			
 			for(int x=1;x<5;x++){ 
-				Botao[x]= new botao();
+				
 				Color Col = Collor[x];
 				Botao[x].setBorder(new LineBorder(Col, 10));
 				Botao[x].setBackground(Col);
-				jp_center.add(Botao[x]);
-				Botao[x].addActionListener(this);
-				
-				jp_north.setBackground(Color.BLACK);
-				jp_south.setBackground(Color.BLACK);
-				jp_east.setBackground(Color.BLACK);
-				jp_west.setBackground(Color.BLACK);
 				
 			}
+			for(int x=5;x<7;x++){ 
+			
+				Color Col = Collor[x];
+				Botao[x].setBackground(Color.BLACK);			
+			
+			}
+			
 		}else{
+			
+			jp_north.setBackground(Color.GRAY);
+			jp_south.setBackground(Color.GRAY);
+			jp_east.setBackground(Color.GRAY);
+			jp_west.setBackground(Color.GRAY);
+
 			for(int x=1;x<5;x++){ 
-				Botao[x]= new botao();
+				
 				Color Col = Collor[x+4];
 				Botao[x].setBorder(new LineBorder(Col, 10));
 				Botao[x].setBackground(Col);
-				jp_center.add(Botao[x]);
-				Botao[x].addActionListener(this);
-				
-				jp_north.setBackground(Color.GRAY);
-				jp_south.setBackground(Color.GRAY);
-				jp_east.setBackground(Color.GRAY);
-				jp_west.setBackground(Color.GRAY);
 				
 			}
+			for(int x=5;x<7;x++){ 
+			
+				Color Col = Collor[x];
+				Botao[x].setBackground(Color.GRAY);				
+			
+			}
+			
 		}
 		
 		
-		
-		
-		
-		
-		
+	
 		//ADDS
 		
 		frame.add(jp_total);
@@ -105,12 +136,14 @@ public class Jogo extends JFrame implements ActionListener {
 		jp_total.add(jp_south,BorderLayout.SOUTH);
 		
 
-	
-	
-	
+		
 	}
 	
-	public void actionPerformed(ActionEvent e){}
+	public void actionPerformed(ActionEvent e){
+		if (e.getSource()== Botao[6]){
+			frame.dispose();
+		}
+	}
 	
 	public static void main(String[] args) {
 
