@@ -154,81 +154,58 @@ public class Menu extends JFrame implements ActionListener {
 		Collor[7] = Color.BLACK;
 		Collor[8] = Color.BLUE;
 		
+		
 		Botao[1].addMouseListener(new MouseListener() {  
-
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[1].setBackground(null);Botao[1].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[1].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[1].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[1].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
 		});Botao[2].addMouseListener(new MouseListener() {  
-
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[2].setBackground(null);Botao[2].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[2].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[2].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[2].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
 		});Botao[3].addMouseListener(new MouseListener() {  
-
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[3].setBackground(null);Botao[3].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[3].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[3].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[3].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
-		});Botao[4].addMouseListener(new MouseListener() {  
-
+		});Botao[4].addMouseListener(new MouseListener() {
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[4].setBackground(null);Botao[4].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[4].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[4].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[4].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
-		});Botao[5].addMouseListener(new MouseListener() {  
-
+		});Botao[5].addMouseListener(new MouseListener() { 
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[5].setBackground(null);Botao[5].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[5].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[5].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[5].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
 		});Botao[6].addMouseListener(new MouseListener() {  
-
 			public void mouseReleased(MouseEvent e) {}  
 			public void mousePressed(MouseEvent e) {}  
 			public void mouseExited(MouseEvent e) {Botao[6].setBackground(null);Botao[6].setForeground(null);}  
-			public void mouseEntered(MouseEvent e) { 
-				int rnd_back = gerador.nextInt(8)+1;
-				if(rnd_back >4){
-					Botao[6].setForeground(Color.WHITE);
-				}
+			public void mouseEntered(MouseEvent e) {int rnd_back = gerador.nextInt(8)+1;
+				if(rnd_back >4){Botao[6].setForeground(Color.WHITE);}
 				Color Col = Collor[rnd_back];
 				Botao[6].setBackground(Col);
 			} public void mouseClicked(MouseEvent e) {}  
@@ -254,12 +231,10 @@ public class Menu extends JFrame implements ActionListener {
 	
 		if (e.getSource()== Botao[1]){
 			new Jogo();
-			frame.dispose();
 		}if (e.getSource()== Botao[3]){
 			new MenuDificuldade();
 		}if (e.getSource()== Botao[5]){
 			new Jogo();
-			frame.dispose();
 		}if (e.getSource()== Botao[6]){
 			System.exit(0);
 		}if (e.getSource()== Botao[4]){
